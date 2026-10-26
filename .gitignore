@@ -22,8 +22,19 @@ decoded/
 output/
 
 # Reverse-engineering evidence trees: decompiled licensed app sources, vendored
-# third-party tools, and oversized REA snapshots — kept local, not published
-analysis/
+# third-party tools, and oversized REA snapshots — kept local, not published.
+# EXCEPTION: two project-authored modules the published tool and tests import
+# (the format-31 codec and the content-free framing auditor) are re-included so
+# a clean clone can run verify.py, vce_inspector.py, vce_decode.py and their tests.
+analysis/*
+!analysis/phase3/
+analysis/phase3/*
+!analysis/phase3/codec/
+analysis/phase3/codec/*
+!analysis/phase3/codec/vce_codec.py
+!analysis/compatibility/
+analysis/compatibility/*
+!analysis/compatibility/audit_encryption.py
 
 # Build / packaging artifacts and shipped binaries
 build/

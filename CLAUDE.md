@@ -44,10 +44,12 @@ without new, cited reverse-engineering evidence.
   `python vce_decode.py 'temp/*.vce' --output decoded`.
 
 `verify.py`, `vce_inspector.py`, `vce_decode.py`, `tests/test_vce_inspector.py` and
-`tests/test_vce_decode.py` import from the `analysis/` package (`analysis.phase3.codec.vce_codec`,
-`analysis.compatibility.audit_encryption`). `analysis/` is **gitignored** (it also holds
-licensed decompilation and vendored tooling), so it must stay present in the local tree —
-a clean checkout of the published repo cannot run those five.
+`tests/test_vce_decode.py` import from the `analysis/` package
+(`analysis.phase3.codec.vce_codec`, `analysis.compatibility.audit_encryption`). `analysis/`
+is otherwise **gitignored** (it holds licensed decompilation and vendored tooling), but
+those two project-authored modules are explicitly re-included in `.gitignore`, so a clean
+checkout runs those five. `vce_decode.py`'s offline exports still additionally need
+local-only `temp/` inputs, which are not published.
 
 ## Architecture
 
