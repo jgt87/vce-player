@@ -1,0 +1,48 @@
+# ---------------------------------------------------------------------------
+# Public-release ignore policy.
+# This repository publishes the interoperability TOOL and its documentation
+# only. It deliberately excludes: third-party ".vce" exam-dump inputs and any
+# content decoded from them, decompiled/licensed vendor material, vendored
+# third-party tooling, build artifacts, and machine-local toolchains.
+# ---------------------------------------------------------------------------
+
+# Local toolchain (Android SDK/emulator, Ghidra, JDK, Frida venv) — large, machine-specific
+.tools/
+
+# Untrusted / user-supplied inputs — third-party exam dumps, APKs, upstream samples
+temp/
+
+# Any VCE/VCEX inputs or vendor APKs, wherever they appear — never commit
+*.vce
+*.vcex
+*.apk
+
+# Content DECODED from third-party dumps (pirated question content in another form)
+decoded/
+output/
+
+# Reverse-engineering evidence trees: decompiled licensed app sources, vendored
+# third-party tools, and oversized REA snapshots — kept local, not published
+analysis/
+
+# Build / packaging artifacts and shipped binaries
+build/
+dist/
+*.exe
+*.spec.bak
+
+# Generated validation reports (may embed corpus text); the write-up is kept
+validation/*.json
+
+# Scratch
+tmp/
+
+# Python caches
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Editor / OS cruft
+*.bak
+*~
+.DS_Store

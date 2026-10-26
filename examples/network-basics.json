@@ -1,0 +1,12 @@
+{
+  "title": "Network basics — original practice exam",
+  "exam_number": "ORIGINAL-001",
+  "passing_score": 70,
+  "time_limit_minutes": 10,
+  "questions": [
+    {"type":"choice","section":"Protocols","prompt":"Which protocol resolves a host name to an IP address?","options":["DNS","SSH","NTP"],"answer":[0],"explanation":"DNS resolves names to addresses."},
+    {"type":"choice","section":"Protocols","prompt":"Select both protocols commonly used to retrieve email.","options":["IMAP","POP3","NTP","ARP"],"answer":[0,1],"explanation":"IMAP and POP3 retrieve email."},
+    {"type":"text","section":"Addressing","prompt":"What is the common IPv4 loopback address?","answer":["127.0.0.1"],"explanation":"127.0.0.1 refers to the local host."},
+    {"type":"choice","section":"Security","prompt":"Which protocol provides an encrypted remote shell?","options":["Telnet","SSH","HTTP"],"answer":[1],"explanation":"SSH provides encrypted remote shell access."}
+  ]
+}
